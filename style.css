@@ -318,6 +318,8 @@ section {
 
 #experience {
   position: relative;
+  height: auto;
+  min-height: 96vh;
 }
 
 .experience-sub-title {
@@ -372,6 +374,9 @@ article .icon {
   transition: all 0.3s ease;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
 }
 
 .skill-container:hover {
@@ -438,6 +443,8 @@ article .icon {
 
 #projects {
   position: relative;
+  height: auto;
+  min-height: 96vh;
 }
 
 .color-container {
