@@ -19,32 +19,6 @@ function toggleProjectDetails(card) {
 }
 
 function toggleSkillDropdown(container) {
-  // Toggle current container
+  // Simply toggle the current container - no auto-close of others
   container.classList.toggle('active');
-  
-  // Optional: Close other skill containers when one is opened
-  const allContainers = document.querySelectorAll('.skill-container');
-  allContainers.forEach(otherContainer => {
-    if (otherContainer !== container && otherContainer.classList.contains('active')) {
-      otherContainer.classList.remove('active');
-    }
-  });
 }
-
-// Close skill dropdowns when clicking outside
-document.addEventListener('click', function(event) {
-  const skillContainers = document.querySelectorAll('.skill-container');
-  let clickedInside = false;
-  
-  skillContainers.forEach(container => {
-    if (container.contains(event.target)) {
-      clickedInside = true;
-    }
-  });
-  
-  if (!clickedInside) {
-    skillContainers.forEach(container => {
-      container.classList.remove('active');
-    });
-  }
-});
