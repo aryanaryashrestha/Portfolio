@@ -353,6 +353,27 @@ article .icon {
   cursor: default;
 }
 
+/* Improved Skills Section Layout */
+.about-containers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .about-containers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-containers {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* PROJECTS SECTION */
 
 #projects {
