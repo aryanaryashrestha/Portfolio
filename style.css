@@ -385,11 +385,19 @@ article .icon {
   border-color: rgb(85, 85, 85);
 }
 
+/* Skill Icons and Centered Headings */
 .skill-header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   margin-bottom: 0;
+  gap: 0.5rem;
+}
+
+.skill-emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .skill-header h2 {
@@ -397,13 +405,14 @@ article .icon {
   font-weight: 700;
   font-size: 1.3rem;
   margin: 0;
-  flex: 1;
+  text-align: center;
 }
 
 .dropdown-arrow {
   font-size: 1.2rem;
   color: rgb(85, 85, 85);
   transition: transform 0.3s ease;
+  margin-top: 0.5rem;
 }
 
 .skill-container.active .dropdown-arrow {
