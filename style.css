@@ -353,8 +353,8 @@ article .icon {
   cursor: default;
 }
 
-/* Improved Skills Section Layout - 3 columns for 6 containers */
-.about-containers {
+/* Interactive Skills Section */
+.skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
@@ -362,18 +362,76 @@ article .icon {
   margin-top: 2rem;
 }
 
-/* Make containers more square-like */
-.details-container {
-  padding: 1.5rem;
+.skill-container {
   background: white;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
-  text-align: center;
-  min-height: 300px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skill-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgb(85, 85, 85);
+}
+
+.skill-header {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.skill-header h2 {
+  color: rgb(53, 53, 53);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0;
+  flex: 1;
+}
+
+.dropdown-arrow {
+  font-size: 1.2rem;
+  color: rgb(85, 85, 85);
+  transition: transform 0.3s ease;
+}
+
+.skill-container.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.skill-items {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  margin-top: 0;
+}
+
+.skill-container.active .skill-items {
+  max-height: 500px;
+  margin-top: 1rem;
+}
+
+.skill-item {
+  padding: 0.5rem 0;
+  color: rgb(85, 85, 85);
+  border-bottom: 1px solid rgb(240, 240, 240);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.skill-item:last-child {
+  border-bottom: none;
+}
+
+.skill-item:hover {
+  color: rgb(53, 53, 53);
+  transform: translateX(5px);
 }
 
 /* PROJECTS SECTION */
@@ -537,8 +595,18 @@ footer p {
     margin-top: 0;
   }
   /* Skills section - 2 columns on tablet */
-  .about-containers {
+  .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skill-header h2 {
+    font-size: 1.1rem;
   }
 }
 
@@ -594,12 +662,5 @@ footer p {
   }
   .text-container {
     text-align: justify;
-  }
-  /* Skills section - 1 column on mobile */
-  .about-containers {
-    grid-template-columns: 1fr;
-  }
-  .details-container {
-    min-height: auto;
   }
 }
