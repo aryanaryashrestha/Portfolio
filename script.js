@@ -17,8 +17,3 @@ function toggleProjectDetails(card) {
     }
   });
 }
-
-function toggleSkillDropdown(container) {
-  // Simply toggle the current container - no auto-close of others
-  container.classList.toggle('active');
-}
