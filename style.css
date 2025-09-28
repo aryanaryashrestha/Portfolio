@@ -355,7 +355,7 @@ article .icon {
   cursor: default;
 }
 
-/* Interactive Skills Section */
+/* Skills Section */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -370,7 +370,6 @@ article .icon {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   padding: 1.5rem;
-  cursor: pointer;
   transition: all 0.3s ease;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -391,7 +390,7 @@ article .icon {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   gap: 0.5rem;
 }
 
@@ -408,27 +407,9 @@ article .icon {
   text-align: center;
 }
 
-.dropdown-arrow {
-  font-size: 1.2rem;
-  color: rgb(85, 85, 85);
-  transition: transform 0.3s ease;
-  margin-top: 0.5rem;
-}
-
-.skill-container.active .dropdown-arrow {
-  transform: rotate(180deg);
-}
-
 .skill-items {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
+  display: block;
   margin-top: 0;
-}
-
-.skill-container.active .skill-items {
-  max-height: 500px;
-  margin-top: 1rem;
 }
 
 .skill-item {
